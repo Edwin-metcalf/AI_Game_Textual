@@ -1,0 +1,28 @@
+.main-game-grid{
+    grid-size: 3 1;
+    grid-columns: 25% 50% 25%;
+    content-align: center middle;
+}
+
+.grid-labels{
+    border: solid white;
+    text-align: center;
+    content-align: center middle;
+    width: 100%;
+    height: 100%;
+}
+#MainGame {
+    border: red;
+}
+
+#ai-container {
+    content-align: center middle;
+    border: solid green;
+    padding: 0;
+    width: 5;
+    height: 5;
+    
+}
+Board {
+    content-align: center middle;
+}
