@@ -1,11 +1,11 @@
 from textual import on
 from textual.widgets import Static, Button
-from backend.ai_backend import AiBackend
+from backend.game_manager import GameManager
 
 class Board(Static):
     def __init__(self):
         super().__init__()
-        self.backend = AiBackend()
+        self.backend = GameManager().ai_backend
         self.score = 0
 
     def compose(self):

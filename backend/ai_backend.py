@@ -1,13 +1,11 @@
-from .stats import Stats
+
 
 class AiBackend:
-    def __init__(self, version="0.1.1"):
-        
-        self.stats = Stats(version)
-        self.score = 0
+    def __init__(self,score=0, version="0.1.1"):
+        self.score = score
 
-    def tick(self):
-        self.score += self.stats.update_score()
+    def tick(self,score):
+        self.score = score
         return self.score
 
 
