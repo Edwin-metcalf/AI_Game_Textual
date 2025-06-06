@@ -8,8 +8,8 @@ class MainGame(Static):
     def __init__(self, game_manager, **kwargs):
         super().__init__(**kwargs)
         self.game_manager = game_manager
-        self.stats_display = StatsDisplay()
-        self.board = Board()
+        self.stats_display = StatsDisplay(self.game_manager.stats)
+        self.board = Board(self.game_manager)
 
     def compose(self):
         yield self.header()

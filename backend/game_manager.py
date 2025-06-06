@@ -10,7 +10,7 @@ class GameManager():
     
     def tick(self):
         self.stats.update_score()
-        self.stats.update_energy()
+        #self.stats.update_energy()
         self.stats.update_money()
         self.stats.update_users()
         self.stats.get_stats_display()

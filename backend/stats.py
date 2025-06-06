@@ -37,10 +37,10 @@ class Stats:
 
     def get_stats_display(self):
         return [
-            f"VERSION: {self.version}",
-            f"USERS: {self.users}",
-            f"MONEY: TOTAL ${self.money_total:.2f} MADE: ${self.money_produced:.2f} COSTS: ${self.costs:.2f} ",
-            f"ENERGY: USED: {self.energy_used} kWh, PRODUCED: {self.energy_produced} kWh, TOTAL: {self.energy_total} kWh"
+            f"VERSION: {self.version}\n",
+            f"USERS: {self.users}\n",
+            f"MONEY: \nTOTAL ${self.money_total:.2f} \nMADE: ${self.money_produced:.2f} \nCOSTS: ${self.costs:.2f}\n",
+            f"ENERGY: \nUSED: {self.energy_produced} kWh, \nPRODUCED: {self.energy_produced} kWh, \nTOTAL: {self.energy_total} kWh\n"
         ]    
         
 
