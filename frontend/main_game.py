@@ -9,7 +9,7 @@ class MainGame(Static):
         super().__init__(**kwargs)
         self.game_manager = game_manager
         self.stats_display = StatsDisplay(self.game_manager.stats)
-        self.board = Board(self.game_manager)
+        self.board = Board(self.game_manager, parent_game = self)
 
     def compose(self):
         yield self.header()
@@ -29,3 +29,6 @@ class MainGame(Static):
             Label("possible third grid for decision making or terminal thing", classes= "grid-labels"),
             classes="main-game-grid"
         )
+    
+    def update_all_displays(self):
+        self.stats_display.update_stats()

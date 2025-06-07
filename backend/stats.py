@@ -1,3 +1,4 @@
+from .nodes import PowerPlantNode
 
 class Stats:
     def __init__(self,version="0.1.1"):
@@ -15,6 +16,8 @@ class Stats:
         self.score = 0
         self.current_score_tick = 1
 
+        self.connected_nodes = []
+
     def update_score(self):
         self.score += self.current_score_tick
         return self.score
@@ -27,13 +30,22 @@ class Stats:
         self.money_produced = round(self.score * 2.3, 2)
         self.money_total += round(self.money_produced - self.costs, 2)
 
-    def update_energy(self, connected_nodes):
+    def update_energy(self):
         self.costs = 0
         if self.energy_total < 0:
             self.energy_total = 0
         self.energy_consumed += self.score * 5
 
-        #for i in connected_nodes find nodes and do stuff with power
+        for i in self.connected_nodes:
+            if isinstance(i, PowerPlantNode):
+                self.energy_produced += i.energy_produced
+
+        self.energy_total += self.energy_produced - self.energy_consumed
+
+        if self.energy_total < 0:
+            energy_cost = round(abs(self.energy_total) // 7.4, 2)
+            self.costs += round(energy_cost, 2)
+            print(f"You used {self.energy_total} more then you produced and had to pay ${energy_cost}")
 
     def get_stats_display(self):
         return [

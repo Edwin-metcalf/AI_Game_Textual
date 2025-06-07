@@ -10,7 +10,7 @@ class StatsDisplay(Static):
     def compose(self):
         yield Vertical(id="stats-container")
 
-    def _on_mount(self):
+    def on_mount(self):
         self.update_stats()
     
 
