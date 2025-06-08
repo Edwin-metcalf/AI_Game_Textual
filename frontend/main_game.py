@@ -2,6 +2,7 @@ from textual.widgets import Footer, Header, Label, Static
 from textual.containers import Grid
 from .board import Board
 from .stats_display import StatsDisplay
+from .events_display import EventsDisplay
 
 
 class MainGame(Static):
@@ -10,6 +11,7 @@ class MainGame(Static):
         self.game_manager = game_manager
         self.stats_display = StatsDisplay(self.game_manager.stats)
         self.board = Board(self.game_manager, parent_game = self)
+        self.events_display = EventsDisplay()
 
     def compose(self):
         yield self.header()
@@ -26,7 +28,7 @@ class MainGame(Static):
         return Grid(
             self.stats_display,
             self.board,
-            Label("possible third grid for decision making or terminal thing", classes= "grid-labels"),
+            self.events_display,
             classes="main-game-grid"
         )
     

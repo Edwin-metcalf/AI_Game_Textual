@@ -11,7 +11,7 @@ class GameManager():
         self.connected_nodes = []
 
     def power_plant_event(self):
-        self.power_plant = PowerPlantNode(5,10)
+        self.power_plant = PowerPlantNode(2,400)
         self.connected_nodes.append(self.power_plant)
         self.stats.connected_nodes.append(self.power_plant)
         

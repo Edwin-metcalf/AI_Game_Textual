@@ -52,7 +52,7 @@ class Stats:
             f"VERSION: {self.version}\n",
             f"USERS: {self.users}\n",
             f"MONEY: \nTOTAL ${self.money_total:.2f} \nMADE: ${self.money_produced:.2f} \nCOSTS: ${self.costs:.2f}\n",
-            f"ENERGY: \nUSED: {self.energy_produced} kWh, \nPRODUCED: {self.energy_produced} kWh, \nTOTAL: {self.energy_total} kWh\n"
+            f"ENERGY: \nUSED: {self.energy_consumed} kWh, \nPRODUCED: {self.energy_produced} kWh, \nTOTAL: {self.energy_total} kWh\n"
         ]    
         
 
