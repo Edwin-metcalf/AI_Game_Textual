@@ -32,6 +32,7 @@ class Stats:
 
     def update_energy(self):
         self.costs = 0
+        self.energy_produced = 0
         if self.energy_total < 0:
             self.energy_total = 0
         self.energy_consumed += self.score * 5

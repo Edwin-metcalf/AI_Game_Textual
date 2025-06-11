@@ -11,7 +11,7 @@ class MainGame(Static):
         self.game_manager = game_manager
         self.stats_display = StatsDisplay(self.game_manager.stats)
         self.board = Board(self.game_manager, parent_game = self)
-        self.events_display = EventsDisplay()
+        self.events_display = EventsDisplay(self.game_manager)
 
     def compose(self):
         yield self.header()
@@ -34,3 +34,4 @@ class MainGame(Static):
     
     def update_all_displays(self):
         self.stats_display.update_stats()
+        self.events_display.update_console()
